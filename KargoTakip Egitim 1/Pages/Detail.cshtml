@@ -1,0 +1,230 @@
+﻿@page
+@model KargoTakip_Egitim_1.Pages.DetailModel
+@{
+	ViewData["Title"] = "Kargo Detay - " + Request.Query["id"];
+}
+
+
+
+
+<div class="col-md-7 col-lg-8">
+	<h4 class="mb-3">Kargo Güncelle</h4>
+	<form class="needs-validation" method="post" novalidate>
+		<div class="row g-3">
+			<div class="col-sm-12">
+				<div>
+					<input asp-for="@Model.Cargo.Id" type="text" class="form-control" id="id" value="@Model.Cargo.Id" hidden="true">
+				</div>
+				<label for="sendername" class="form-label">Gönderici Adı</label>
+				<input type="text" class="form-control" id="sendername" placeholder="" value="@Model.Cargo.SenderName" required asp-for="@Model.Cargo.SenderName">
+				<div class="invalid-feedback">
+					Lütfen bu alanı doldurunuz.
+				</div>
+			</div>
+
+
+			<div class="col-md-12">
+				<label for="senderaddress" class="form-label">Gönderici Adresi</label>
+				<select class="form-select" id="senderaddress" required asp-for="@Model.Cargo.SenderAddress">
+					<option value="">@Model.Cargo.SenderAddress</option>
+					<option> ADANA		</option>
+					<option> ADIYAMAN	</option>
+					<option> AFYONKARAHİSAR</option>
+					<option> AĞRI		</option>
+					<option> AKSARAY	</option>
+					<option> AMASYA		</option>
+					<option> ANKARA		</option>
+					<option> ANTALYA	</option>
+					<option> ARDAHAN	</option>
+					<option> ARTVİN		</option>
+					<option> AYDIN		</option>
+					<option> BALIKESİR	</option>
+					<option> BARTIN		</option>
+					<option> BATMAN		</option>
+					<option> BAYBURT	</option>
+					<option> BİLECİK	</option>
+					<option> BİNGÖL		</option>
+					<option> BİTLİS		</option>
+					<option> BOLU		</option>
+					<option> BURDUR		</option>
+					<option> BURSA		</option>
+					<option> ÇANAKKALE	</option>
+					<option> ÇANKIRI	</option>
+					<option> ÇORUM		</option>
+					<option> DENİZLİ	</option>
+					<option> DİYARBAKIR	</option>
+					<option> DÜZCE		</option>
+					<option> EDİRNE		</option>
+					<option> ELAZIĞ		</option>
+					<option> ERZİNCAN	</option>
+					<option> ERZURUM	</option>
+					<option> ESKİŞEHİR	</option>
+					<option> GAZİANTEP	</option>
+					<option> GİRESUN	</option>
+					<option> GÜMÜŞHANE	</option>
+					<option> HAKKARİ	</option>
+					<option> HATAY		</option>
+					<option> IĞDIR		</option>
+					<option> ISPARTA	</option>
+					<option> İSTANBUL	</option>
+					<option> İZMİR		</option>
+					<option> KAHRAMANMARAŞ</option>
+					<option> KARABÜK	</option>
+					<option> KARAMAN	</option>
+					<option> KARS		</option>
+					<option> KASTAMONU	</option>
+					<option> KAYSERİ	</option>
+					<option> KIRIKKALE	</option>
+					<option> KIRKLARELİ	</option>
+					<option> KIRŞEHİR	</option>
+					<option> KİLİS		</option>
+					<option> KOCAELİ	</option>
+					<option> KONYA		</option>
+					<option> KÜTAHYA	</option>
+					<option> MALATYA	</option>
+					<option> MANİSA		</option>
+					<option> MARDİN		</option>
+					<option> MERSİN		</option>
+					<option> MUĞLA		</option>
+					<option> MUŞ		</option>
+					<option> NEVŞEHİR	</option>
+					<option> NİĞDE		</option>
+					<option> ORDU		</option>
+					<option> OSMANİYE	</option>
+					<option> RİZE		</option>
+					<option> SAKARYA	</option>
+					<option> SAMSUN		</option>
+					<option> SİİRT		</option>
+					<option> SİNOP		</option>
+					<option> SİVAS		</option>
+					<option> ŞANLIURFA	</option>
+					<option> ŞIRNAK		</option>
+					<option> TEKİRDAĞ	</option>
+					<option> TOKAT		</option>
+					<option> TRABZON	</option>
+					<option> TUNCELİ	</option>
+					<option> UŞAK		</option>
+					<option> VAN		</option>
+					<option> YALOVA		</option>
+					<option> YOZGAT		</option>
+					<option> ZONGULDAK	</option>
+
+				</select>
+				<div class="invalid-feedback">
+					Lütfen bir şehir seçiniz.
+				</div>
+			</div>
+
+
+			<div class="col-sm-12">
+				<label for="receivername" class="form-label">Alıcı Adı</label>
+				<input type="text" class="form-control" id="receivername" placeholder="" value="@Model.Cargo.ReceiverName" required asp-for="@Model.Cargo.ReceiverName">
+				<div class="invalid-feedback">
+					Lütfen bu alanı doldurunuz.
+				</div>
+			</div>
+
+		
+	
+
+
+			<div class="col-md-12">
+				<label for="receiveraddress" class="form-label">Alıcı Adresi</label>
+				<select class="form-select"  id="receiveraddress" required asp-for="@Model.Cargo.ReceiverAddress">
+					<option  value="">@Model.Cargo.ReceiverAddress</option>
+
+					<option > ADANA </option>
+					<option> ADIYAMAN	    </option>
+					<option> AFYONKARAHİSAR  </option>
+					<option> AĞRI		   </option>
+					<option> AKSARAY		</option>
+					<option> AMASYA		</option>
+					<option> ANKARA		</option>
+					<option> ANTALYA	</option>
+					<option> ARDAHAN	</option>
+					<option> ARTVİN		</option>
+					<option> AYDIN		</option>
+					<option> BALIKESİR	</option>
+					<option> BARTIN		</option>
+					<option> BATMAN		</option>
+					<option> BAYBURT	</option>
+					<option> BİLECİK	</option>
+					<option> BİNGÖL		</option>
+					<option> BİTLİS		</option>
+					<option> BOLU		</option>
+					<option> BURDUR		</option>
+					<option> BURSA		</option>
+					<option> ÇANAKKALE	</option>
+					<option> ÇANKIRI	</option>
+					<option> ÇORUM		</option>
+					<option> DENİZLİ	</option>
+					<option> DİYARBAKIR	</option>
+					<option> DÜZCE		</option>
+					<option> EDİRNE		</option>
+					<option> ELAZIĞ		</option>
+					<option> ERZİNCAN	</option>
+					<option> ERZURUM	</option>
+					<option> ESKİŞEHİR	</option>
+					<option> GAZİANTEP	</option>
+					<option> GİRESUN	</option>
+					<option> GÜMÜŞHANE	</option>
+					<option> HAKKARİ	</option>
+					<option> HATAY		</option>
+					<option> IĞDIR		</option>
+					<option> ISPARTA	</option>
+					<option> İSTANBUL	</option>
+					<option> İZMİR		</option>
+					<option> KAHRAMANMARAŞ</option>
+					<option> KARABÜK	</option>
+					<option> KARAMAN	</option>
+					<option> KARS		</option>
+					<option> KASTAMONU	</option>
+					<option> KAYSERİ	</option>
+					<option> KIRIKKALE	</option>
+					<option> KIRKLARELİ	</option>
+					<option> KIRŞEHİR	</option>
+					<option> KİLİS		</option>
+					<option> KOCAELİ	</option>
+					<option> KONYA		</option>
+					<option> KÜTAHYA	</option>
+					<option> MALATYA	</option>
+					<option> MANİSA		</option>
+					<option> MARDİN		</option>
+					<option> MERSİN		</option>
+					<option> MUĞLA		</option>
+					<option> MUŞ		</option>
+					<option> NEVŞEHİR	</option>
+					<option> NİĞDE		</option>
+					<option> ORDU		</option>
+					<option> OSMANİYE	</option>
+					<option> RİZE		</option>
+					<option> SAKARYA	</option>
+					<option> SAMSUN		</option>
+					<option> SİİRT		</option>
+					<option> SİNOP		</option>
+					<option> SİVAS		</option>
+					<option> ŞANLIURFA	</option>
+					<option> ŞIRNAK		</option>
+					<option> TEKİRDAĞ	</option>
+					<option> TOKAT		</option>
+					<option> TRABZON	</option>
+					<option> TUNCELİ	</option>
+					<option> UŞAK		</option>
+					<option> VAN		</option>
+					<option> YALOVA		</option>
+					<option> YOZGAT		</option>
+					<option> ZONGULDAK	</option>
+				</select>
+				<div class="invalid-feedback">
+					Lütfen bir şehir seçiniz.
+				</div>
+			</div>
+		
+</div>
+<hr class="my-4">
+
+<button class="w-100 btn btn-primary btn-lg" type="submit">Güncelle</button>
+
+	</form>
+</div>
+
